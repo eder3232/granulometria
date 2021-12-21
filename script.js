@@ -135,5 +135,5 @@ function calcular() {
 }
 
 function r3(n) {
-  return Math.round(n * 1000) / 1000
+  return parseFloat(n).toFixed(2)
 }
