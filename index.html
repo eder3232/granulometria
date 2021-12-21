@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Granulometria</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="data">
+        <h1>Granulometría</h1>
+        <div class="table">
+          <table id="table">
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th>tamiz</th>
+                <th>abertura</th>
+                <th>peso</th>
+                <th>peso corregido</th>
+                <th>%retenido</th>
+                <th>%ret_acum</th>
+                <th>pasante</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><button class="add">&nbsp + &nbsp</button></td>
+                <td><button class="remove">&nbsp - &nbsp</button></td>
+                <td><input type="text" value="3/4" /></td>
+                <td><input type="number" value="19.05" /></td>
+                <td><input type="number" value="0.00" /></td>
+                <td>-</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100</td>
+              </tr>
+
+              <tr>
+                <td><button class="add">&nbsp + &nbsp</button></td>
+                <td><button class="remove">&nbsp - &nbsp</button></td>
+                <td><input type="text" value="3/8" /></td>
+                <td><input type="number" value="9.525" /></td>
+                <td><input type="number" /></td>
+                <td>-</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100</td>
+              </tr>
+
+              <tr>
+                <td><button class="add">&nbsp + &nbsp</button></td>
+                <td><button class="remove">&nbsp - &nbsp</button></td>
+                <td><input type="text" value="4" /></td>
+                <td><input type="number" value="4.760" /></td>
+                <td><input type="number" /></td>
+                <td>-</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100</td>
+              </tr>
+
+              <tr>
+                <td><button class="add">&nbsp + &nbsp</button></td>
+                <td><button class="remove">&nbsp - &nbsp</button></td>
+                <td><input type="text" value="8" /></td>
+                <td><input type="number" value="2.380" /></td>
+                <td><input type="number" /></td>
+                <td>-</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100</td>
+              </tr>
+
+              <tr>
+                <td><button class="add">&nbsp + &nbsp</button></td>
+                <td><button class="remove">&nbsp - &nbsp</button></td>
+                <td><input type="text" value="20" " /></td>
+                <td><input type="number" value="0.850" /></td>
+                <td><input type="number" /></td>
+                <td>-</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100</td>
+              </tr>
+
+              <tr>
+                <td><button class="add">&nbsp + &nbsp</button></td>
+                <td><button class="remove">&nbsp - &nbsp</button></td>
+                <td><input type="text" value="40" /></td>
+                <td><input type="number" value="0.425" /></td>
+                <td><input type="number" /></td>
+                <td>-</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100</td>
+              </tr>
+
+              <tr>
+                <td><button class="add">&nbsp + &nbsp</button></td>
+                <td><button class="remove">&nbsp - &nbsp</button></td>
+                <td><input type="text" value="100" /></td>
+                <td><input type="number" value="0.150" /></td>
+                <td><input type="number" /></td>
+                <td>-</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100</td>
+              </tr>
+
+              <tr>
+                <td><button class="add">&nbsp + &nbsp</button></td>
+                <td><button class="remove">&nbsp - &nbsp</button></td>
+                <td><input type="text" value="200" /></td>
+                <td><input type="number" value="0.075" /></td>
+                <td><input type="number" /></td>
+                <td>-</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100</td>
+              </tr>
+
+              <tr>
+                <td><button class="add">&nbsp + &nbsp</button></td>
+                <td><button class="remove">&nbsp - &nbsp</button></td>
+                <td><input type="text" value="fondo" /></td>
+                <td><input type="number" value="0.000" /></td>
+                <td><input type="number" /></td>
+                <td>-</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>total:</td>
+                <td id="pesoTotal"></td>
+                <td id="pesoTotalCorregido"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="medio">
+          <div class="options">
+            <br />
+            <p>Hay perdida de material?</p>
+            <br />
+            <p class="inline">No</p>
+            <input
+              type="checkbox"
+              name="eder"
+              id="perdidaFalse"
+              checked="true"
+            />
+            <p class="inline">Si</p>
+            <input type="checkbox" name="eder" id="perdidaTrue" />
+            <br />
+            <p class="onoff hidden">¿Cuánto era el peso inicial?</p>
+            <input
+              type="number"
+              name="pesoInicial"
+              id="pesoInicial"
+              class="onoff hidden"
+              placeholder="Peso inicial"
+            />
+            <br />
+            <p class="onoff inline hidden">Material Perdido</p>
+            <p class="onoff inline hidden" id="materialPerdido"></p>
+            <br />
+            <button id="calcular">Calcular</button>
+          </div>
+
+          <div class="resultados">
+            <p>D10: &nbsp</p>
+            <p id="d10"></p>
+            <br />
+            <p>D30: &nbsp</p>
+            <p id="d30"></p>
+            <br />
+            <p>D60: &nbsp</p>
+            <p id="d60"></p>
+            <br />
+            <p>Cu: &nbsp</p>
+            <p id="cu"></p>
+            <br />
+            <p>Cc: &nbsp</p>
+            <p id="cc"></p>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>
