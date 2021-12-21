@@ -64,6 +64,8 @@ $table.addEventListener('mouseover', function () {
       let cell4 = row.insertCell(4)
       let cell5 = row.insertCell(5)
       let cell6 = row.insertCell(6)
+      let cell7 = row.insertCell(7)
+      let cell8 = row.insertCell(8)
       cell0.innerHTML = '<td><button class="add">&nbsp + &nbsp</button></td>'
       cell1.innerHTML = '<td><button class="remove">&nbsp - &nbsp</button></td>'
       cell2.innerHTML = '<td><input type="text" value="" /></td>'
@@ -71,6 +73,8 @@ $table.addEventListener('mouseover', function () {
       cell4.innerHTML = '<td><input type="number" /></td>'
       cell5.innerHTML = '<td>0</td>'
       cell6.innerHTML = '<td>0</td>'
+      cell7.innerHTML = '<td>0</td>'
+      cell8.innerHTML = '<td>100</td>'
     }
   }
   $table.rows[1].cells[4].firstElementChild.value = 0
@@ -96,7 +100,6 @@ function calcular() {
   let dataTable = readDom($body)
   let $pesoInicial = document.getElementById('pesoInicial').value
   // console.log($pesoInicial)
-  // console.log(dataTable)
   if ($perdidaTrue) {
     gr = new Granulometria($pesoInicial)
   } else {
@@ -114,8 +117,6 @@ function calcular() {
   $pesoTotal.innerText = parseFloat(gr.pesoMallas).toFixed(2)
   $pesoTotalCorregido.innerText = parseFloat(gr.pesoCorregido).toFixed(2)
   // console.log($pesoTotal)
-  // console.table(gr.mallas)
-
   for (let i = 0; i < $body.rows.length - 1; i++) {
     $body.rows.item(i).cells.item(5).innerText = r3(gr.mallas[i].pesoCorregido)
     $body.rows.item(i).cells.item(6).innerText = r3(gr.mallas[i].retenido)
@@ -123,9 +124,7 @@ function calcular() {
       gr.mallas[i].retenidoAcumulado
     )
     $body.rows.item(i).cells.item(8).innerText = r3(gr.mallas[i].pasante)
-    // console.log(($body.rows.item(i).cells.item(5).innerText = 'asdf'))
   }
-  console.log(gr)
   $d10.innerText = r3(gr.d10)
   $d30.innerText = r3(gr.d30)
   $d60.innerText = r3(gr.d30)
