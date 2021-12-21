@@ -111,8 +111,8 @@ function calcular() {
   gr.pasantes()
   gr.deciles()
   gr.coeficientes()
-  $pesoTotal.innerText = gr.pesoMallas
-  $pesoTotalCorregido.innerText = gr.pesoCorregido
+  $pesoTotal.innerText = parseFloat(gr.pesoMallas).toFixed(2)
+  $pesoTotalCorregido.innerText = parseFloat(gr.pesoCorregido).toFixed(2)
   // console.log($pesoTotal)
   // console.table(gr.mallas)
 
