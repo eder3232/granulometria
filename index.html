@@ -4,10 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
     <title>Granulometria</title>
   </head>
   <body>
+    <div id="developed">developed by</div>
+    <div id="eder">eder_3232</div>
     <div class="container">
       <div class="data">
         <h1>Granulometría</h1>
@@ -45,7 +55,7 @@
                 <td><button class="remove">&nbsp - &nbsp</button></td>
                 <td><input type="text" value="3/8" /></td>
                 <td><input type="number" value="9.525" /></td>
-                <td><input type="number" /></td>
+                <td><input type="number" value="57.30" /></td>
                 <td>-</td>
                 <td>0</td>
                 <td>0</td>
@@ -57,7 +67,7 @@
                 <td><button class="remove">&nbsp - &nbsp</button></td>
                 <td><input type="text" value="4" /></td>
                 <td><input type="number" value="4.760" /></td>
-                <td><input type="number" /></td>
+                <td><input type="number" value="130.30" /></td>
                 <td>-</td>
                 <td>0</td>
                 <td>0</td>
@@ -69,7 +79,7 @@
                 <td><button class="remove">&nbsp - &nbsp</button></td>
                 <td><input type="text" value="8" /></td>
                 <td><input type="number" value="2.380" /></td>
-                <td><input type="number" /></td>
+                <td><input type="number" value="92.60" /></td>
                 <td>-</td>
                 <td>0</td>
                 <td>0</td>
@@ -81,7 +91,7 @@
                 <td><button class="remove">&nbsp - &nbsp</button></td>
                 <td><input type="text" value="20" " /></td>
                 <td><input type="number" value="0.850" /></td>
-                <td><input type="number" /></td>
+                <td><input type="number" value="114.40" /></td>
                 <td>-</td>
                 <td>0</td>
                 <td>0</td>
@@ -93,7 +103,7 @@
                 <td><button class="remove">&nbsp - &nbsp</button></td>
                 <td><input type="text" value="40" /></td>
                 <td><input type="number" value="0.425" /></td>
-                <td><input type="number" /></td>
+                <td><input type="number" value="118.80" /></td>
                 <td>-</td>
                 <td>0</td>
                 <td>0</td>
@@ -105,7 +115,7 @@
                 <td><button class="remove">&nbsp - &nbsp</button></td>
                 <td><input type="text" value="100" /></td>
                 <td><input type="number" value="0.150" /></td>
-                <td><input type="number" /></td>
+                <td><input type="number" value="99.60" /></td>
                 <td>-</td>
                 <td>0</td>
                 <td>0</td>
@@ -117,7 +127,7 @@
                 <td><button class="remove">&nbsp - &nbsp</button></td>
                 <td><input type="text" value="200" /></td>
                 <td><input type="number" value="0.075" /></td>
-                <td><input type="number" /></td>
+                <td><input type="number" value="136.60" /></td>
                 <td>-</td>
                 <td>0</td>
                 <td>0</td>
@@ -129,7 +139,7 @@
                 <td><button class="remove">&nbsp - &nbsp</button></td>
                 <td><input type="text" value="fondo" /></td>
                 <td><input type="number" value="0.000" /></td>
-                <td><input type="number" /></td>
+                <td><input type="number" value="216.50" /></td>
                 <td>-</td>
                 <td>0</td>
                 <td>0</td>
@@ -195,8 +205,12 @@
           </div>
         </div>
       </div>
+      <div class="grafico">
+        <canvas id="myChart"></canvas>
+      </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js"></script>
     <script src="./script.js" type="module"></script>
   </body>
 </html>

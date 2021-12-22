@@ -60,8 +60,30 @@ td {
   display: inline;
 }
 
+.grafico {
+  width: 800px;
+  margin: 30px;
+}
 .hidden {
   display: none;
+}
+#developed {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: rgb(226, 226, 226);
+  font-size: 1.2rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#eder {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  color: rgba(0, 204, 255, 0.993);
+  font-weight: bold;
+  font-size: 1.4rem;
+  font-family: 'Montserrat', sans-serif;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

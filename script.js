@@ -1,11 +1,12 @@
 import { readDom } from './helpers/readDom.js'
 import { Granulometria, Malla } from './models/granulometria.js'
+import { crearDatosGrafico } from './models/grafico.js'
 //leer datos de dom
 let $table = document.getElementById('table')
 let $body = $table.lastElementChild
-console.log($table)
+let ctx = document.getElementById('myChart')
+// console.log($table)
 
-let total = 0
 // console.log(body)
 // console.log(body.rows.length)
 
@@ -70,7 +71,7 @@ $table.addEventListener('mouseover', function () {
       cell1.innerHTML = '<td><button class="remove">&nbsp - &nbsp</button></td>'
       cell2.innerHTML = '<td><input type="text" value="" /></td>'
       cell3.innerHTML = '<td><input type="number" value="" /></td>'
-      cell4.innerHTML = '<td><input type="number" /></td>'
+      cell4.innerHTML = '<td><input type="number" value="10"/></td>'
       cell5.innerHTML = '<td>0</td>'
       cell6.innerHTML = '<td>0</td>'
       cell7.innerHTML = '<td>0</td>'
@@ -114,9 +115,9 @@ function calcular() {
   gr.pasantes()
   gr.deciles()
   gr.coeficientes()
+  console.log(gr)
   $pesoTotal.innerText = parseFloat(gr.pesoMallas).toFixed(2)
   $pesoTotalCorregido.innerText = parseFloat(gr.pesoCorregido).toFixed(2)
-  // console.log($pesoTotal)
   for (let i = 0; i < $body.rows.length - 1; i++) {
     $body.rows.item(i).cells.item(5).innerText = r3(gr.mallas[i].pesoCorregido)
     $body.rows.item(i).cells.item(6).innerText = r3(gr.mallas[i].retenido)
@@ -131,6 +132,43 @@ function calcular() {
 
   $cc.innerText = r3(gr.cc)
   $cu.innerText = r3(gr.cu)
+  // creamos la grafica
+  let datosParaGrafico = crearDatosGrafico(gr)
+
+  const myChart = new Chart(ctx, {
+    type: 'scatter',
+    data: {
+      datasets: datosParaGrafico,
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      elements: {
+        line: {
+          backgroundColor: '#fff',
+        },
+      },
+      scales: {
+        x: {
+          type: 'logarithmic',
+          max: 100,
+          min: 0,
+          grid: {
+            drawBorder: false,
+            color: '#787878',
+          },
+        },
+        y: {
+          max: 100,
+          min: 0,
+          grid: {
+            drawBorder: false,
+            color: '#787878',
+          },
+        },
+      },
+    },
+  })
 }
 
 function r3(n) {
