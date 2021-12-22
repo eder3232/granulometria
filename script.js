@@ -101,7 +101,7 @@ function calcular() {
   let dataTable = readDom($body)
   let $pesoInicial = document.getElementById('pesoInicial').value
   // console.log($pesoInicial)
-  if ($perdidaTrue) {
+  if ($perdidaTrue.checked) {
     gr = new Granulometria($pesoInicial)
   } else {
     gr = new Granulometria()
