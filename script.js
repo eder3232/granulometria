@@ -4,7 +4,7 @@ import { crearDatosGrafico } from './models/grafico.js'
 //leer datos de dom
 let $table = document.getElementById('table')
 let $body = $table.lastElementChild
-let ctx = document.getElementById('myChart')
+let myChart
 // console.log($table)
 
 // console.log(body)
@@ -135,7 +135,11 @@ function calcular() {
   // creamos la grafica
   let datosParaGrafico = crearDatosGrafico(gr)
 
-  const myChart = new Chart(ctx, {
+  if (myChart != undefined) {
+    myChart.destroy()
+  }
+  let ctx = document.getElementById('myChart')
+  myChart = new Chart(ctx, {
     type: 'scatter',
     data: {
       datasets: datosParaGrafico,
