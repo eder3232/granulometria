@@ -128,7 +128,7 @@ function calcular() {
   }
   $d10.innerText = r3(gr.d10)
   $d30.innerText = r3(gr.d30)
-  $d60.innerText = r3(gr.d30)
+  $d60.innerText = r3(gr.d60)
 
   $cc.innerText = r3(gr.cc)
   $cu.innerText = r3(gr.cu)
